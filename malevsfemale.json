@@ -14,6 +14,7 @@
     },
     "y": {
       "aggregate": "count"
+      "type":"quantitive"
     },
     "color": {
       "type": "nominal",
