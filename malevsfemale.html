@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "url": "https://Ehzuy.github.io/-FIT3179/database.csv"
+  },
+
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x": {
+      "field": "sex",
+    },
+    "y": {
+      "aggredate": "count",
+    },
+    "color": {
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Male",
+          "Female",
+        ],
+        "range": [
+          "#1f77b4",
+          "#9467bd"
+        ]
+    }
+  },
+  "config": {}
+}
