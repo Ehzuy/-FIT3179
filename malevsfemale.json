@@ -3,31 +3,24 @@
   "data": {
     "url": "./database.csv"
   },
-
-  "mark": {
-    "type": "bar"
-  },
+ 
+  "mark": "bar",
   "encoding": {
     "x": {
       "field": "sex",
-      "type":"nominal"
+      "type": "nominal"
     },
     "y": {
       "aggregate": "count",
-      "type":"quantitive"
+
     },
     "color": {
       "type": "nominal",
-      "scale": {
-        "domain": [
-          "Male",
-          "Female",
-        ],
-        "range": [
-          "#1f77b4",
-          "#9467bd"
-        ]
-    }
+      "field": "occupation",
+      "title": "Weather Type", 
+      "legend": {
+        "orient": "left"
+      }
     }
   },
   "config": {}
