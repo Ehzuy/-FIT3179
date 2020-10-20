@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "./database.csv"
+  },
+ 
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "occupation",
+      "type": "nominal"
+    },
+    "y": {
+      "aggregate": "count",
+      "stack": "normalize"
+    },
+    "color": {
+      "type": "nominal",
+      "field": "occupation",
+      "title": "Weather Type", 
+      "legend": {
+        "orient": "left"
+      }
+    }
+  },
+  "config": {}
+}
