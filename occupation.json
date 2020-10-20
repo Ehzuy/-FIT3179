@@ -12,7 +12,7 @@
     },
     "y": {
       "aggregate": "count",
-      "stack": "normalize"
+
     },
     "color": {
       "type": "nominal",
