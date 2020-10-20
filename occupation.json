@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
-    "url": "./database.csv"
+    "url": "https://Ehzuy.github.io/-FIT3179/database.csv"
   },
  
   "mark": "bar",
@@ -11,7 +11,8 @@
       "type": "nominal"
     },
     "y": {
-      "aggregate": "count"
+      "aggregate": "count",
+      "stack": "normalize"
 
     },
     "color": {
