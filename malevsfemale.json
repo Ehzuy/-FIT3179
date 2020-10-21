@@ -3,12 +3,14 @@
   "data": {
     "url": "https://Ehzuy.github.io/-FIT3179/database.csv"
   },
- 
-  "mark": "bar",
+  "width":700,
+  "height":300,
+  "mark": "line",
   "encoding": {
     "x": {
-      "field": "sex",
-      "type": "nominal"
+      "field": "birth_year",
+      "type": "quantitative",
+      "title":"year"
     },
     "y": {
       "aggregate": "count"
