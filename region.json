@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple pie chart with labels.",
+  "data": {
+    "url": "https://Ehzuy.github.io/-FIT3179/database.csv"
+  },
+  "encoding": {
+    "theta": {"aggregate": "count", "type": "quantitative", "stack": true},
+    "color": {"field": "continent", "type": "nominal", "legend": null}
+  },
+  "layer": [{
+    "mark": {"type": "arc", "outerRadius": 130}
+  }, {
+    "mark": {"type": "text", "radius": 165},
+    "encoding": {
+      "text": {"field": "continent", "type": "nominal"}
+    }
+  }],
+  "view": {"stroke": null}
+}
