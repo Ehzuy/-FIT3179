@@ -27,36 +27,18 @@
       "data": {"url": "https://Ehzuy.github.io/-FIT3179/database.csv"},
       "projection": {"type": "mercator","scale":110},
       "layer":[{
-        "encoding":{
-          "birth_year":{
-            "field":"birth_year",
-            "type":"quantitative"}},
+        
         "selection": {
         "CylYr": {
           "type": "single", "fields": [ "birth_year"],
-          "init": { "birth_year": "-300"},
+          "init": { "birth_year": "0"},
           "bind": {
             "birth_year": {"input": "range", "min": -4000, "max": 2000, "step": 1}
           }
         } 
         },
         "transform": [{"filter": {"field": "birth_year", "equal": "CylYr"}}],
-        "mark": "circle",
-        "encoding": {
-          "longitude": {
-            "field": "longitude",
-            "type": "quantitative"
-          },
-          "latitude": {
-            "field": "latitude",
-            "type": "quantitative"
-          },
-          "size": {"value": 30},
-          "color": {
-            "value": "red",
-            "condition": {"selection": "CylYr", "field": "country", "type": "nominal"}
-            }
-        } 
+        "mark": "circle" 
       },
       { 
     "transform": [{"filter": {"selection": "CylYr"}}],
