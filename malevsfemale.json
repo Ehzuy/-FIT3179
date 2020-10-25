@@ -6,6 +6,13 @@
   "width":700,
   "height":300,
   "mark": "line",
+  "selection": {
+    "gender_select":{
+      "type":"single",
+      "fields":["sex"],
+      "bind":"legend"
+    }
+  },
   "encoding": {
     "x": {
       "field": "birth_year",
@@ -16,6 +23,10 @@
       "aggregate": "count"
 
     },
+    "opacity": {
+      "condition":{"selection":"gender_select","value":1.0},
+      "value": 0.2
+ },
     "color": {
       "type": "nominal",
       "field": "sex", 
