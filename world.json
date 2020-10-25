@@ -29,28 +29,28 @@
       "layer":[{
         
         "selection": {
-        "CylYr": {
+        "Yr": {
           "type": "single", "fields": [ "birth_year"],
           "init": { "birth_year": "0"},
-          "bind": {
+          "bind": {  
             "birth_year": {"input": "range", "min": -4000, "max": 2000, "step": 1}
           }
         } 
         },
-        "transform": [{"filter": {"field": "birth_year", "equal": "CylYr"}}],
+        "transform": [{"filter": {"field": "birth_year", "equal": "Yr"}}],
         "mark": "circle" 
       },
       { 
-    "transform": [{"filter": {"selection": "CylYr"}}],
+    "transform": [{"filter": {"selection": "Yr"}}],
     "mark": "circle",
     "encoding": {
       "longitude": {"field": "longitude", "type": "quantitative"},
       "latitude": {"field": "latitude", "type": "quantitative"},
       "color": {"value": "grey"},
-      "size": {"value": 100}
+      "size": {"value": 100},
+      "tooltip":{"field":"full_name","type":"nominal"}
     }
     }]
-      
     }
   ]
 }
