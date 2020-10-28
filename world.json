@@ -6,10 +6,10 @@
   "layer": [
     {
       "data": {
-        "url": "data/world-110m.json",
+        "url": "https://Ehzuy.github.io/-FIT3179/worldmap.topojson",
         "format": {
           "type": "topojson",
-          "feature": "countries"
+          "feature": "custom"
         }
       },
       "projection": {
@@ -31,7 +31,7 @@
         "selection": {
         "Yr": {
           "type": "single", "fields": [ "birth_year"],
-          "init": { "birth_year": "0"},
+          "init": { "birth_year": "1"},
           "bind": {  
             "birth_year": {"input": "range", "min": -4000, "max": 2000, "step": 1}
           }
@@ -46,9 +46,13 @@
     "encoding": {
       "longitude": {"field": "longitude", "type": "quantitative"},
       "latitude": {"field": "latitude", "type": "quantitative"},
-      "color": {"value": "grey"},
+      "color": {"value": "crimson"},
       "size": {"value": 100},
-      "tooltip":{"field":"full_name","type":"nominal"}
+      "tooltip":[{"field":"full_name","type":"nominal"},
+                  {"field":"occupation","type":"nominal"},
+                  {"field":"sex","type":"nominal"},
+                  {"field":"historical_popularity_index","type":"quantitative"},
+                  {"field":"country","type":"nominal"}]
     }
     }]
     }
