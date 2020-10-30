@@ -16,10 +16,13 @@
 <h2>Second visualisation: Comparison of male vs female count with legend highlight</h2>
 <div id="vis2"></div>
   
-<h2>Second visualisation: region</h2>
+<h2>Third visualisation: region</h2>
 <div id="vis3"></div>
 
-<h2>Second visualisation: occupation</h2>
+<h2>Fourth visualisation: occupation</h2>
+<div id="vis4"></div>
+  
+<h2>Fifth visualisation: popularity</h2>
 <div id="vis4"></div>
 
 <script type="text/javascript">
@@ -27,6 +30,7 @@
   var specVis2= "./malevsfemale.json";
   var specVis3= "./region.json";
   var specVis4= "./occupation.json";
+  var specVis5= "./popularity.json";
 
   vegaEmbed('#vis1', specVis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -41,6 +45,10 @@
   }).catch(console.error);
   
     vegaEmbed('#vis4', specVis4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#vis5', specVis5).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
