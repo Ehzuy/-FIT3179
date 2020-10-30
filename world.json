@@ -26,28 +26,33 @@
     {
       "data": {"url": "https://Ehzuy.github.io/-FIT3179/database.csv"},
       "projection": {"type": "mercator","scale":110},
-      "layer":[{
-        
+      "transform":[
+           {"calculate": "1*datum.birth_year", "as": "years"}
+      ],
+      "layer":[{    
         "selection": {
-        "Yr": {
-          "type": "single", "fields": [ "birth_year"],
-          "init": { "birth_year": "1"},
-          "bind": {  
-            "birth_year": {"input": "range", "min": -4000, "max": 2000, "step": 1}
-          }
-        } 
+          "Yr": {
+            "type": "single", "fields": [ "years"],
+            "init": { "years": 100},
+            "bind": {  
+              "years": {"input": "range", "min": -3500, "max": 2005, "step": 1}
+            }
+          } 
         },
-        "transform": [{"filter": {"field": "birth_year", "equal": "Yr"}}],
-        "mark": "circle" 
+        "mark": "circle" ,
+        "encoding": {
+              
+          "size": {"value": 0}
+    }
       },
       { 
     "transform": [{"filter": {"selection": "Yr"}}],
-    "mark": "circle",
+    "mark": "point",
     "encoding": {
       "longitude": {"field": "longitude", "type": "quantitative"},
       "latitude": {"field": "latitude", "type": "quantitative"},
       "color": {"value": "crimson"},
-      "size": {"value": 100},
+      "size": {"value": 50},
       "tooltip":[{"field":"full_name","type":"nominal"},
                   {"field":"occupation","type":"nominal"},
                   {"field":"sex","type":"nominal"},
