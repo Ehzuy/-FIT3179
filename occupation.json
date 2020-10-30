@@ -1,28 +1,25 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "data": {
-    "url": "https://Ehzuy.github.io/-FIT3179/database.csv"
-  },
- 
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "field": "occupation",
-      "type": "nominal"
-    },
-    "y": {
-      "aggregate": "count",
-      "stack": "normalize"
+  "data": {"url": "https://Ehzuy.github.io/-FIT3179/database.csv"},
+    "transform": [
+    {
+      "aggregate": [{
+       "op": "count",
+       "field": "occupation",
+       "as": "occupation_count"
+      }],
+      "groupby": ["occupation"]
 
     },
-    "color": {
-      "type": "nominal",
-      "field": "occupation",
-      "title": "Weather Type", 
-      "legend": {
-        "orient": "left"
-      }
-    }
-  },
-  "config": {}
+    {"filter": "datum.occupation_count > 157"} 
+  ],
+  "mark": "bar",
+
+  "encoding": {
+    "x": {"field": "occupation_count","type":"quantitative"},
+    "y": {"field": "occupation","type":"nominal","sort":"-x"},
+    "color": {"value": "crimson"},
+    "tooltip":[
+      {"field":"occupation_count","type":"quantitative"}]
+  }
 }
