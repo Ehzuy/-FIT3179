@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A bar graph showing the scores of the top 5 students. This shows an example of the window transform, for how the top K (5) can be filtered, and also how a rank can be computed for each student.",
+  "data": {"url": "https://Ehzuy.github.io/-FIT3179/database.csv"},
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "historical_popularity_index", "order": "descending" }]
+    }, {
+      "filter": "datum.rank <= 21"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+        "field": "historical_popularity_index",
+        "type": "quantitative"
+    },
+    "y": {
+        "field": "full_name",
+        "type": "nominal",
+        "sort": {"field": "historical_popularity_index", "op": "average", "order":"descending"}
+    },
+    "color": {
+      "field": "occupation",
+      "type": "nominal"
+    }
+   
+  }
+}
