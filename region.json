@@ -4,6 +4,7 @@
   "data": {
     "url": "https://Ehzuy.github.io/-FIT3179/database.csv"
   },
+  "transform":[{"filter":"datum.continent != ''"}],
   "encoding": {
     "theta": {"aggregate": "count", "type": "quantitative", "stack": true},
     "color": {"field": "continent", "type": "nominal", "legend": null}
