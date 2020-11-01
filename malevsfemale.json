@@ -33,7 +33,9 @@
       "legend": {
         "orient": "right"
       }
-    }
+    },
+    "tooltip":[
+      {"field":"birth_year","type":"quantitative"}]
   },
   "config": {}
 }
